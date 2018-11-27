@@ -1,0 +1,9 @@
+from selenium import webdriver
+driver = webdriver.Firefox()
+driver.get("https://www.facebook.com/")
+elem_loginInner=driver.find_element_by_id('email')
+elem_loginInner.send_keys('********@yahoo.co.jp')
+elem_password = driver.find_element_by_id('pass')
+elem_password.send_keys('*******')
+elem_login_btn=driver.find_element_by_id('u_0_2')
+elem_login_btn.click()
