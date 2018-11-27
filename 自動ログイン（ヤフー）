@@ -1,0 +1,11 @@
+from selenium import webdriver
+driver = webdriver.Firefox()
+driver.get('https://login.yahoo.co.jp/config/login?.src=www&.done=https%3A%2F%2Fwww.yahoo.co.jp%2F')
+elem_login= driver.find_element_by_id('username')
+elem_login.send_keys('satexi0011')
+elem_btn=driver.find_element_by_id('btnNext')
+elem_btn.click()
+elem_pass=driver.find_element_by_id('passwd')
+elem_pass.send_keys('s091053s')
+elem_btn=driver.find_element_by_id('btnSubmit')
+elem_btn.click()
