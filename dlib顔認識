@@ -1,0 +1,14 @@
+import dlib
+from skimage import io
+import cv2
+
+face_detector = dlib.get_frontal_face_detector()
+
+file_name = "sample.jpg"
+image = io.imread(file_name)
+detected_faces = face_detector(image, 1)
+save_image = cv2.imread(file_name, cv2.IMREAD_COLOR)
+
+for i, face_rect in enumerate(detected_faces):
+    cv2.rectangle(save_image, tuple([face_rect.left(),face_rect.top()]), tuple([face_rect.right(),face_rect.bottom()]), (0, 0,255), thickness=2)
+    cv2.imwrite('complete_'+file_name, save_image)
